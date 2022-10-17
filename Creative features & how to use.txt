@@ -1,0 +1,77 @@
+How to launch
+
+First and foremost, you must need unity, or maybe not as its just a game export. I believe you have it based on the shear amount of unity projects and this being an animation class. 
+You just need to have unity installed and nothing else. Simply double-click on CS408_Assignment2_Part1 application file and the assignment will open up as a video game setting
+
+As for the submission itself, 3 objects follow 3 different types of required animations. While the interactable cube can be moved in any direction, upto you
+
+Controlls
+Press WASD to move the cube
+Use Q and E to change gravitational pull for cube
+Press Alt + f4 to quit the application.
+I am not sure if there would be an windows warning, I do not think so if Unity is installed
+
+*****Creative Feature******
+1. The program works as a video game, very lazy video game.
+2. Gravity is included and plays a part in it
+3. All 3 other objects are interactable, means you can hit them
+4. Try hitting the big coin with the cube, it will fall, giving the low amount of balance it has.
+
+
+Sources for Objects:
+1. Ada King. CGTrader. (n.d.). Retrieved October 16, 2022, from https://www.cgtrader.com/tssrkt 
+2. Free 3D models. CGTrader. (n.d.). Retrieved October 16, 2022, from https://www.cgtrader.com/items/83297/download-page 
+3. Free 3D models. CGTrader. (n.d.). Retrieved October 16, 2022, from https://www.cgtrader.com/items/2545578/download-page 
+
+p.s. Only 1 model has the creator mentioned, and all pieces are royality free.
+
+Also, I could not include the original edit/build files as the files exceed the URcourses limit significantly
+However, you can find them in github in the following link
+
+Github: https://github.com/rhythmray295
+
+
+
+*****Source Code******  //Notice: This work needs very little coding as engine is already pre-made a lot of components
+
+//in C#
+
+using UnityEngine;
+
+public class Movement : MonoBehaviour { 
+    public Rigidbody rb;
+
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        rb.AddForce(0, 450 * Time.deltaTime, 0);
+
+        if(Input.GetKey("d"))
+        {
+            rb.AddForce(100 * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(-100 * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey("q"))
+        {
+            rb.AddForce(0, 100 * Time.deltaTime, 0);
+        }
+        if (Input.GetKey("e"))
+        {
+            rb.AddForce(0, -100 * Time.deltaTime, 0);
+        }
+        if (Input.GetKey("w"))
+        {
+            rb.AddForce(0, 0, 100 * Time.deltaTime);
+        }
+        if (Input.GetKey("s"))
+        {
+            rb.AddForce(0, 0, -100 * Time.deltaTime);
+        }
+
+    }
+}
+
